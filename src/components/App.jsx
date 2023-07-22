@@ -1,16 +1,17 @@
+import { useState } from 'react';
+import { GalleryImages } from './GalleryImages/galleryImages';
+import { Searchbar } from './SearchBar/searchBar';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export const App = () => {
+  const [query, setQuery] = useState('');
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <>
+      <ToastContainer />
+      <Searchbar searchByQuery={setQuery}></Searchbar>
+      <GalleryImages query={query}></GalleryImages>
+    </>
   );
 };

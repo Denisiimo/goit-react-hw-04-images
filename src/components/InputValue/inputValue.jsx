@@ -1,4 +1,5 @@
 import { InputVal } from './inputValue.styled';
+import PropTypes from 'prop-types';
 
 export const InputValue = ({ value, onChange }) => {
   return (
@@ -13,4 +14,9 @@ export const InputValue = ({ value, onChange }) => {
       />
     </>
   );
+};
+
+InputValue.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };

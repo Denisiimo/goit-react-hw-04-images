@@ -1,9 +1,11 @@
 import { GalleryImageG, GalleryItemG } from './galleryItem.styled';
 import { Modal } from 'components/Modal/modal';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export const GalleryItem = ({ id, webformatURL, largeImageURL }) => {
   const [modal, setModal] = useState(false);
+  
 
   const toggleModal = () => {
     setModal(!modal);
@@ -18,3 +20,10 @@ export const GalleryItem = ({ id, webformatURL, largeImageURL }) => {
     </>
   );
 };
+
+GalleryItem.propTypes = {
+  // id: PropTypes.number.isRequired,
+  webformatURL: PropTypes.string.isRequired,
+  largeImageURL: PropTypes.string.isRequired,
+};
+

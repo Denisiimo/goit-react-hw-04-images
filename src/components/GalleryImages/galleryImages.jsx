@@ -4,6 +4,7 @@ import { GalleryList, NotFound } from './galleryImages.styled';
 import { ButtonMore } from 'components/Button/buttonMore';
 import { Loader } from 'components/Loader/loader';
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 export const GalleryImages = ({ query }) => {
   const [data, setData] = useState([]);
@@ -88,4 +89,8 @@ export const GalleryImages = ({ query }) => {
       {isLoading ? <Loader /> : ''}
     </>
   );
+};
+
+GalleryImages.propTypes = {
+  query: PropTypes.string.isRequired,
 };

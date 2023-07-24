@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Overlay, ModalS, ExitCross } from './modal.styled';
+import PropTypes from 'prop-types';
 
 export const Modal = ({ onClose, largeImageURL }) => {
   useEffect(() => {
@@ -32,4 +33,9 @@ export const Modal = ({ onClose, largeImageURL }) => {
       </Overlay>
     </>
   );
+};
+
+Modal.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  largeImageURL: PropTypes.string.isRequired,
 };

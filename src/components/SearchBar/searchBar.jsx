@@ -3,6 +3,7 @@ import { ButtonSearch } from 'components/Button/buttonSearch';
 import { SearchBar, SearchForm } from './searchBar.styled';
 import { InputValue } from 'components/InputValue/inputValue';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export const Searchbar = ({ searchByQuery }) => {
   const [query, setQuery] = useState('');
@@ -41,4 +42,8 @@ export const Searchbar = ({ searchByQuery }) => {
       </SearchBar>
     </>
   );
+};
+
+Searchbar.propTypes = {
+  searchByQuery: PropTypes.func.isRequired,
 };
